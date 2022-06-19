@@ -4,9 +4,10 @@ const server = net.createServer(socket => {
   socket.on('data', (data) => {
     const command = data.toString();
     console.log('client sent command', command);
-    if (command === '+PING\r\n') {
-      handlePing(socket)
-    }
+    handlePing(socket)
+    // if (command === '+PING\r\n') {
+    //   handlePing(socket)
+    // }
   });
   socket.pipe(socket);
 });
