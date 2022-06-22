@@ -9,15 +9,11 @@ const server = net.createServer(socket => {
     // if (command === '+PING\r\n') {
     //   handlePing(socket)
     // }
-    count++;
-    console.log('user send request', count);
   });
-  socket.pipe(socket);
 });
 
 const handlePing = (socket) => {
   socket.write('+PONG\r\n');
-  console.log('server respond with PONG');
 }
 
 server.listen(6379, '127.0.0.1');
