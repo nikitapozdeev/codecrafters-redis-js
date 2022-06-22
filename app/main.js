@@ -10,6 +10,7 @@ const server = net.createServer(socket => {
     //   handlePing(socket)
     // }
     count++;
+    console.log('user send request', count);
   });
   socket.pipe(socket);
 });
